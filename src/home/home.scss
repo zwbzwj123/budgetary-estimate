@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.home {
+  user-select: none;
+  .header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    background-color: olivedrab;
+    color: white;
+    .title {
+      display: flex;
+      line-height: 50px;
+    }
+  }
+  .use-date {
+    float: left;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: #017E66;
+  }
+  .update-btn,.choose-btn {
+    float: left;
+    padding: 10px 20px;
+    margin: 10px 0 0 50px;
+    background-color: rgba(1,126,102,0.08);
+    color: #017E66;
+    &:hover {
+      cursor: pointer;
+      background-color: #017E66;
+      color: white;
+    }
+  }
+  .content {
+    width: calc(100% - 40px);
+    color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+    .tree {
+      width: 70%;
+      padding-left: 20px;
+      .section {
+        font-size: 22px;
+        font-weight: bold;
+        .section-title {
+          margin-bottom: 10px;
+          span:hover {
+            cursor: pointer;
+          }
+        }
+        .sub-section {
+          font-size: 18px;
+          font-weight: normal;
+          margin: 10px;
+          span {
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+          table {
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            border-collapse:collapse;
+            tr {
+              th {
+                padding: 5px 8px;
+                max-width: 350px;
+                border: 1px solid black;
+              }
+              td {
+                max-width: 350px;
+                border: 1px solid black;
+                text-align: center;
+                .icon-add2 {
+                  font-size: 18px;
+                  color: darkviolet;
+                  text-decoration: none;
+                  &:hover {
+                    font-weight: bold;
+                  }
+                }
+              }
+              .add2excel {
+                border: none;
+                width: 30px;
+              }
+            }
+          }
+        }
+        .unfold-section {
+          display: block;
+        }
+        .fold-section {
+          display: none;
+        }
+        .fold-table {
+          display: none;
+        }
+        .unfold-table {
+          display: block;
+        }
+      }
+    }
+    .form {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      table {
+        font-size: 18px;
+        border-collapse:collapse;
+        tr {
+          th {
+            padding: 5px 8px;
+            border: 1px solid black;
+          }
+          td {
+            border: 1px solid black;
+            text-align: center;
+          }
+          .remove {
+            border: none;
+            width: 20px;
+            .icon-remove2 {
+              font-size: 16px;
+              color: red;
+              text-decoration: none;
+              cursor: pointer;
+              &:hover {
+                font-weight: bold;
+              }
+            }
+          }
+          .preview-btn {
+            border: none;
+            span {
+              padding: 5px;
+              cursor: pointer;
+              display: block;
+              width: 70px;
+              margin: 20px auto;
+              background-color: rgba(1,126,102,0.08);
+              color: #017E66;
+              &:hover {
+                background-color: #017E66;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .shade-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(black, .3);
+    z-index: 1;
+    .preview-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      //height: 200px;
+      background-color: white;
+      .preview-header {
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #eee;
+        line-height: 40px;
+        .icon-close {
+          font-size: 10px;
+          float: right;
+          margin-right: 20px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .preview-way {
+          font-size: 14px;
+          color: #333;
+          margin-left: 10px;
+        }
+      }
+      .wrap-content {
+        position: relative;
+        min-height: 170px;
+        .factor-table {
+          margin: 20px 20px 0 55px;
+          flex-wrap: wrap;
+          height: 20px;
+          display: inline-block;
+          .date {
+            &:hover {
+              color: #017E01;
+              cursor: pointer;
+            }
+          }
+          .icon-remove2 {
+            margin-left: 10px;
+            color: red;
+            &:hover {
+              font-weight: bold;
+              cursor: pointer;
+            }
+          }
+        }
+        .input-warp {
+          display: flex;
+          padding-top: 40px;
+          span {
+            line-height: 28px;
+            margin-left: 88px;
+          }
+          .form-control {
+            height: 18px;
+            width: 130px;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 5px 12px;
+            border: 1px solid #0231BA;
+            border-radius: 2px;
+            outline: none;
+            vertical-align: middle;
+            display: inline-block;
+          }
+        }
+        .file-btn {
+          padding-top: 45px;
+          text-align: center;
+          text-decoration: underline;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .confirm-btn {
+          position: absolute;
+          top: 100px;
+          left: 160px;
+          div {
+            padding: 10px 20px;
+            background-color: rgba(1,126,102,0.08);
+            color: #017E66;
+            &:hover {
+              cursor: pointer;
+              background-color: #017E66;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
