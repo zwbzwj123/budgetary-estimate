@@ -258,7 +258,10 @@ export default class Home extends React.Component {
         <span className="date" onClick={() => this.chooseDate(item)}>
           {item.split('_')[0] + '年' + item.split('_')[1] + '期'}
         </span>
-        <span className="iconfont icon-remove2" onClick={() => this.removeDate(item)}/>
+        {
+          window.sessionStorage.getItem('isRoot') ?
+            <span className="iconfont icon-remove2" onClick={() => this.removeDate(item)}/> : ''
+        }
       </div>;
     });
 
