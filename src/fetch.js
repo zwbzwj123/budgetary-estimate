@@ -1,6 +1,4 @@
-// 47.94.22.124
-// localhost
-const path  = '47.94.22.124';
+const path  = 'localhost';
 export const Fetch = {
   getPriceItemByid(section, callBack) {
     $.get('http://' + path + ':8080/getItemByIndex', {index: section}, function (data) {
